@@ -4,6 +4,8 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
+DOMAIN="example.com"
+
 # Check if $DOMAIN is set
 if [ -z "$DOMAIN" ]; then
   echo -e "You did not set \$DOMAIN variable at run time. No certificate will be registered.\n"
