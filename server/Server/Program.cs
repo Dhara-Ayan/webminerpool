@@ -565,7 +565,7 @@ namespace Server
                 Console.WriteLine(" -> {0}", new StringReader(exception.ToString()).ReadLine());
             });
 
-            string localAddr = (certAvailable ? "wss://" : "ws://") + "0.0.0.0:8181";
+            string localAddr = (certAvailable ? "wss://" : "ws://") + "0.0.0.0:" + Environment.GetEnvironmentVariable("PORT");;
             WebSocketServer server = new WebSocketServer(localAddr);
             server.Certificate = cert;
 
